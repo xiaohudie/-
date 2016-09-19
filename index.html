@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>饿了么</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    background: #f7f7f7;
+    font-family: 'Helvetica Neue',Arial;
+}
+
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+
+article, aside, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+.banner{
+  position: relative;
+  overflow: hidden;
+}
+
+.banner, .banner>a{
+  padding-top: 69.44%;
+}
+
+.banner img, .banner>a{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.wrapper{
+  margin: auto;
+  min-width: 320px;
+  max-width: 450px;
+}
+
+.prepare .intro{
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 3em auto 1.5em;
+  padding: .5em;
+  width: 80%;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background: #9b9b9b;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.prepare .intro:after, .prepare .intro:before {
+    position: absolute;
+    right: 0;
+    margin: auto;
+    content: '';
+    left: 0;
+}
+
+.prepare .intro:before{
+  top: -10px;
+  width: 0;
+  border: 5px solid;
+  border-color: transparent transparent #9b9b9b;
+}
+
+.prepare .intro:after{
+  top: -42px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  background: url(https://static11.elemecdn.com/eleme/activities/dist/baida/eleme.d3f894.svg) center no-repeat #43aaf9;
+}
+
+.tip {
+    margin: auto;
+    width: 220px;
+    color: red;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.prepare .form input{
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,.1) inset;
+  -ms-box-shadow: 2px 2px 2px rgba(0,0,0,.1) inset;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.1) inset;
+  text-align: center;
+}
+
+.prepare .form input, .prepare .form>a{
+  display: block;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1em auto;
+  padding: .75em;
+  width: 70%;
+  font-size: 14px;
+  line-height: 1.25em;
+}
+
+.prepare .form>a {
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: #ff4d07;
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal-container, .prepare .form>a {
+    -webkit-border-radius: 4px;
+    text-align: center;
+}
+
+.rules{
+  position: relative;
+  margin: 2em auto 0px;
+  width: 80%;
+  color: #686868;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.rules, .rules h3{
+  text-align: center;
+}
+
+.rules:before {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #f24141;
+    content: '';
+}
+
+.rules h3 {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 0;
+    padding: 0 .5em;
+    background: #f7f7f7;
+    color: #f24141;
+    font-size: 14px;
+}
+
+.rules ol {
+    padding-left: 1em;
+    list-style-position: outside;
+    text-align: left;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.success, .tip {
+    display: none;
+}
+
+.success .caption {
+    margin-top: .5em;
+    color: #6f6f6f;
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.ticketlist {
+    font-size: 36px;
+    text-align: center;
+    padding: .7rem 0;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.ticketlist>dl {
+    width: 85%;
+    margin: .3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.ticketlist>dl:before{
+  content: '';
+  display: block;
+  background: url(https://static11.elemecdn.com/eleme/activities/dist/baida/ticket.ff6149.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: 38.3%;
+}
+
+.ticketlist dd, .ticketlist dt {
+    position: absolute;
+    left: 20%;
+    right: 0;
+    line-height: 1;
+    height: 1em;
+    bottom: 0;
+    color: #da2020;
+}
+
+.ticketlist dt {
+    top: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.success .account {
+    color: #7c7c7c;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.success .account var {
+    color: #f24141;
+    font-style: normal;
+}
+
+.success .download {
+    margin-top: 1em;
+    font-size: 14px;
+}
+
+.success .download a {
+    display: block;
+    margin: auto;
+    padding: .75em;
+    width: 70%;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #3ca9fc;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.modal-wrapper, .success .download * {
+    vertical-align: middle;
+}
+  </style>
+</head>
+<body>
+  <div style="display:none;">
+    <img src="https://static11.elemecdn.com/eleme/activities/dist/baida/eleme.7aa770.png" alt="">
+  </div>
+  <section class="banner">
+    <img src="https://static11.elemecdn.com/eleme/activities/dist/baida/banner.354c82.jpg" alt="">
+  </section>
+  <div class="prepare wrapper" id="prepareScene">
+    <section class="intro" id="topTips">
+      输入手机号领取饿了么红包
+    </section>
+    <section class="tip" id="tipSection"></section>
+    <section class="form">
+      <input type="tel" placeholder="请输入手机号" id="phoneInput">
+      <a id="grabButton" href="javascript:" ubt-click="690">领取红包</a>
+    </section>
+    <section class="rules">
+      <h3>活动规则</h3>
+      <ol>
+        <li>发放至手机号的红包需下载饿了么App用手机号注册，或将手机号绑定至已注册的饿了么账户后才可使用。</li>
+        <li>使用红包时的下单手机号需为抢红包时使用的手机号。</li>
+        <li>红包仅限在线支付时使用，每张订单仅限使用一张红包，红包不找零。</li>
+        <li>饿了么保留法律范围内允许的对活动的解释权。</li>
+      </ol>
+    </section>
+  </div>
+  <div class="success wrapper" id="successScene">
+    <section class="caption" id="captionField">恭喜获得饿了么外卖券</section>
+    <section class="ticketlist" id="ticketList">
+      <dl>
+        <dt>已领完</dt>
+      </dl>
+    </section>
+    <section class="tip" id="errorSection">undefined</section>
+    <section class="account" id="accountSection">
+      <var id="amountField"></var>
+      外卖卷已放入账户
+      <var id="accountField"></var>
+      <br>
+      登录APP即可使用
+    </section>
+    <section class="download">
+      <a href="https://h.ele.me/activities/download?from=erweimahongbao" ubt-click="691" target="_top">
+        <img src="https://static11.elemecdn.com/eleme/activities/dist/baida/eleme.d3f894.svg" alt="">
+        <span>立即使用</span>
+      </a>
+    </section>
+    <section class="rules">
+      <h3>活动规则</h3>
+      <ol>
+        <li>发放至手机号的红包需下载饿了么App用手机号注册，或将手机号绑定至已注册的饿了么账户后才可使用。</li>
+        <li>使用红包时的下单手机号需为抢红包时使用的手机号。</li>
+        <li>红包仅限在线支付时使用，每张订单仅限使用一张红包，红包不找零。</li>
+        <li>饿了么保留法律范围内允许的对活动的解释权。</li>
+      </ol>
+    </section>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+  var phoneCheckUtil = {
+    //判断为空
+    isEmpty:function(val){
+      if(!val || val.length == 0){
+        return true;
+      } else {
+        return false;
+      }
+    },
+    isTelephone:function(val){
+      if(/^[1][358][0-9]{9}/.test(val)){
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  $('document').ready(function(){
+    $("#grabButton").click(function(){
+      var telephone = $.trim($("#phoneInput").val());
+      //判断手机号为空时显示提示
+      if(phoneCheckUtil.isEmpty(telephone)){
+        $('#tipSection').text("请输入手机号").show();
+          return;
+      };
+      if(!phoneCheckUtil.isTelephone(telephone)){
+        $('#tipSection').text("手机号码格式不正确").show();
+        return;
+      };
+      $("#prepareScene").hide();
+      $("#successScene").show();
+    })
+  })
+  // var obtn = document.getElementById("grabButton");
+
+  // obtn.addEventListener("click",function(){
+  //   var telephone= document.getElementById("phoneInput").value;
+    // alert(telephone);
+  // },false);
+  </script>
+</body>
+</html>
